@@ -390,7 +390,7 @@ html {
 	}
 }
 .logo {
-    display: block;
+    display: inline-block;
     position: relative;
     line-height: 1;
     text-decoration: none;
@@ -402,6 +402,14 @@ html {
     &:hover {
         text-decoration: none;
     }
+	.logo-name {
+		display: block;
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: bold;
+		color: var(--clr-base);
+		text-transform: uppercase;
+	}
 	.logo-image {
 		display: block;
 		width: 100%;
@@ -748,7 +756,7 @@ html {
 			}
 		}
 		.logo-wrap {
-			margin-bottom: 22px;
+			margin-bottom: 14px;
 		}
 		.soc-wrap {
 			display: flex;
@@ -761,7 +769,7 @@ html {
 			}
 		}
 		.logo {
-			max-width: 151px;
+			width: auto;
 		}
 		.menu {
 			font-size: 12px;
