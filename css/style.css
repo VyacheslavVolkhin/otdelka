@@ -342,6 +342,10 @@ html {
       flex-shrink: 0;
   filter: brightness(0) grayscale(1);
 }
+.header .button-soc:hover {
+  filter: none;
+  opacity: 1;
+}
 .header-top-panel {
   display: none;
 }
@@ -620,6 +624,9 @@ html {
 .footer-main-panel .button-soc {
   width: 36px;
   height: 36px;
+}
+.footer-main-panel .button-soc:hover {
+  filter: brightness(0) grayscale(1);
 }
 .footer-main-panel .btn {
   height: 53px;
@@ -1710,9 +1717,6 @@ select.form-input:required:invalid {
   max-width: 100%;
   max-height: 100%;
 }
-.btn-action-ico.button-soc:hover {
-  opacity: 0.8;
-}
 .btn-action-icon {
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2096,42 +2100,42 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 \* ----------------------------------- */
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans ExtraBold'), local('UbuntuSans-ExtraBold'), url('../fonts/UbuntuSans-ExtraBold.woff2') format('woff2'), url('../fonts/UbuntuSans-ExtraBold.woff') format('woff');
+  src: url('../fonts/UbuntuSans-ExtraBold.woff2') format('woff2'), url('../fonts/UbuntuSans-ExtraBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans Light'), local('UbuntuSans-Light'), url('../fonts/UbuntuSans-Light.woff2') format('woff2'), url('../fonts/UbuntuSans-Light.woff') format('woff');
+  src: url('../fonts/UbuntuSans-Light.woff2') format('woff2'), url('../fonts/UbuntuSans-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans Medium'), local('UbuntuSans-Medium'), url('../fonts/UbuntuSans-Medium.woff2') format('woff2'), url('../fonts/UbuntuSans-Medium.woff') format('woff');
+  src: url('../fonts/UbuntuSans-Medium.woff2') format('woff2'), url('../fonts/UbuntuSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans Bold'), local('UbuntuSans-Bold'), url('../fonts/UbuntuSans-Bold.woff2') format('woff2'), url('../fonts/UbuntuSans-Bold.woff') format('woff');
+  src: url('../fonts/UbuntuSans-Bold.woff2') format('woff2'), url('../fonts/UbuntuSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans SemiBold'), local('UbuntuSans-SemiBold'), url('../fonts/UbuntuSans-SemiBold.woff2') format('woff2'), url('../fonts/UbuntuSans-SemiBold.woff') format('woff');
+  src: url('../fonts/UbuntuSans-SemiBold.woff2') format('woff2'), url('../fonts/UbuntuSans-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Ubuntu Sans';
-  src: local('Ubuntu Sans Regular'), local('UbuntuSans-Regular'), url('../fonts/UbuntuSans-Regular.woff2') format('woff2'), url('../fonts/UbuntuSans-Regular.woff') format('woff');
+  src: url('../fonts/UbuntuSans-Regular.woff2') format('woff2'), url('../fonts/UbuntuSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
