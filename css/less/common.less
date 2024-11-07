@@ -79,6 +79,13 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+	margin: 0 -12px -24px -12px;
+	&.wrap-mb40 {
+		margin-bottom: -40px;
+		.item-wrap {
+			margin-bottom: 40px;
+		}
+	}
 }
 .item-wrap, .tile-item-wrap {
     width: 100%;
@@ -86,6 +93,11 @@
     break-inside: avoid-column;
     display: block;
     animation: fadein ease 0.2s;
+	padding: 0 12px;
+	margin-bottom: 24px;
+	&.wrap-full {
+		width: 100%;
+	}
 }
 .tile-many-lines, .text-many-lines {
     display: -webkit-box;
@@ -212,6 +224,14 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
 	top: auto;
 	bottom: auto;
+}
+.slider-wrap {
+	position: relative;
+	margin: 0 -12px;
+}
+.sl-wrap {
+	position: relative;
+	padding: 0 12px;
 }
 .slider-pagination {
 	display: flex;

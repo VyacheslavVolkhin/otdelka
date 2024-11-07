@@ -1,5 +1,91 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+
+	// filter actions
+	const filterButtonOpen = document.querySelector('.js-filter-open');
+	const filterButtonClose = document.querySelector('.js-filter-close');
+	const filterButtonToggle = document.querySelector('.js-filter-toggle');
+	if (filterButtonOpen) {
+		filterButtonOpen.addEventListener("click", function(event) {
+				document.body.classList.add("filter-show");
+				event.preventDefault();
+		})
+	}
+	if (filterButtonClose) {
+		filterButtonClose.addEventListener("click", function(event) {
+				document.body.classList.remove("filter-show");
+				event.preventDefault();
+		})
+	}
+	if (filterButtonToggle) {
+		filterButtonToggle.addEventListener("click", function(event) {
+				document.body.classList.toggle("filter-show");
+				event.preventDefault();
+		})
+	}
+
+
+
+	//catalog items cart add and counter 
+	const cartAddButtons = document.querySelectorAll('.js-cart-add');
+
+	cartAddButtons.forEach(button => {
+		button.addEventListener('click', function(e) {
+			const tileCartWrap = this.closest('.tile-cart-wrap');
+			const inputCounter = tileCartWrap.querySelector('.js-input-counter');
+			const minusButton = tileCartWrap.querySelector('.js-button-counter-minus');
+
+			tileCartWrap.classList.add('active');
+			inputCounter.value = '1';
+			
+			if (minusButton.classList.contains('button-disabled')) {
+				minusButton.classList.remove('button-disabled');
+			}
+			e.preventDefault()
+			return false
+		});
+	});
+	const minusButtons = document.querySelectorAll('.js-button-counter-minus');
+
+	minusButtons.forEach(button => {
+		button.addEventListener('click', function() {
+			const tileCartWrap = this.closest('.tile-cart-wrap');
+			const inputCounter = tileCartWrap.querySelector('.js-input-counter');
+
+			let counterValue = parseInt(inputCounter.value);
+			if (counterValue > 0) {
+				counterValue--;
+				inputCounter.value = counterValue.toString();
+			}
+			
+			if (counterValue === 0) {
+				tileCartWrap.classList.remove('active');
+			}
+		});
+	});
+	
+	
+	//btn tgl and add
+	let tglButtons = document.querySelectorAll('.js-btn-tgl')
+	let addButtons = document.querySelectorAll('.js-btn-add')
+	for (i = 0;i < tglButtons.length;i++) {
+		tglButtons[i].addEventListener('click', function(e) {
+			this.classList.contains('active') ? this.classList.remove('active') : this.classList.add('active')
+			e.preventDefault()
+			return false
+		})
+	}
+	for (i = 0;i < addButtons.length;i++) {
+		addButtons[i].addEventListener('click', function(e) {
+			if (!this.classList.contains('active')) {
+				this.classList.add('active');
+				e.preventDefault()
+				return false
+			}
+		})
+	}
+	
+	
 	//fancybox
 	Fancybox.bind("[data-fancybox]", {
 		//settings
@@ -14,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const bodyElem = document.querySelector('body')
 	function popupElementsClear() {
 		document.body.classList.remove('menu-show')
-		document.body.classList.remove('filter-show')
 		document.body.classList.remove('search-show')
 		popupElements.forEach(element => element.classList.remove('popup-right'))
 	}
