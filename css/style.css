@@ -1014,6 +1014,7 @@ html {
   .footer-main-panel .callback-wrap .btn.btn-border,
   .footer-main-panel .callback-wrap .btn {
     display: inline-block;
+    padding: 0;
     text-align: left;
     width: auto;
     white-space: normal;
@@ -1367,7 +1368,7 @@ html {
 .item-tile-article .tile-tags-wrap {
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -8px 8px 0;
+  margin: 0 -8px 12px 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -1456,6 +1457,7 @@ html {
 .item-tile-article .tile-title {
   color: var(--clr-base);
   font-size: 18px;
+  font-weight: bold;
 }
 .item-tile-catalog .tile-price,
 .item-tile-article .tile-price {
@@ -1501,7 +1503,7 @@ html {
   padding: 0 7px;
   font-size: 12px;
   z-index: 7;
-  margin: 0 8px 8px 0;
+  margin: 0 4px 4px 0;
 }
 .item-tile-catalog .button-tag:not(:hover),
 .item-tile-article .button-tag:not(:hover) {
@@ -1539,6 +1541,7 @@ html {
   font-size: 16px;
   line-height: 1.3;
   margin-bottom: 16px;
+  font-weight: bold;
 }
 .item-tile-article .tile-info {
   margin: 0 0 16px 0;
@@ -2287,6 +2290,110 @@ html {
   .tiles-box .items-scroll-wrap .item-wrap:last-child {
     padding-right: 30px;
   }
+  .tiles-box .items-scroll-wrap {
+    -ms-flex-order: 1;
+        order: 1;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 3;
+        order: 3;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 5;
+        order: 5;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 7;
+        order: 7;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 9;
+        order: 9;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 11;
+        order: 11;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 13;
+        order: 13;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 15;
+        order: 15;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 17;
+        order: 17;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 19;
+        order: 19;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 21;
+        order: 21;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 23;
+        order: 23;
+  }
+  .tiles-box .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap ~ .items-scroll-wrap {
+    -ms-flex-order: 25;
+        order: 25;
+  }
+  .tiles-box .wrap-main {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+  .tiles-box .wrap-main ~ .wrap-main {
+    -ms-flex-order: 4;
+        order: 4;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 6;
+        order: 6;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 8;
+        order: 8;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 10;
+        order: 10;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 12;
+        order: 12;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 14;
+        order: 14;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 16;
+        order: 16;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 18;
+        order: 18;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 20;
+        order: 20;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 22;
+        order: 22;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 24;
+        order: 24;
+  }
+  .tiles-box .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main ~ .wrap-main {
+    -ms-flex-order: 26;
+        order: 26;
+  }
   .actions-catalog-panel .sort-wrap .popup-content-block {
     width: 240px;
     padding: 15px 0;
@@ -2588,6 +2695,9 @@ html {
   }
   .tiles-box .items-scroll-wrap {
     display: contents;
+  }
+  .tiles-box .items-scroll-wrap .item-wrap:nth-child(2) ~ .item-wrap {
+    display: none;
   }
   .tiles-box .item-wrap {
     width: 33.33%;
@@ -3553,43 +3663,43 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 			fonts
 \* ----------------------------------- */
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans ExtraBold'), local('UbuntuSans-ExtraBold'), url('../fonts/UbuntuSans-ExtraBold.woff2') format('woff2'), url('../fonts/UbuntuSans-ExtraBold.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-ExtraBold.woff2') format('woff2'), url('../fonts/UbuntuSans-ExtraBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans Light'), local('UbuntuSans-Light'), url('../fonts/UbuntuSans-Light.woff2') format('woff2'), url('../fonts/UbuntuSans-Light.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-Light.woff2') format('woff2'), url('../fonts/UbuntuSans-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans Medium'), local('UbuntuSans-Medium'), url('../fonts/UbuntuSans-Medium.woff2') format('woff2'), url('../fonts/UbuntuSans-Medium.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-Medium.woff2') format('woff2'), url('../fonts/UbuntuSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans Bold'), local('UbuntuSans-Bold'), url('../fonts/UbuntuSans-Bold.woff2') format('woff2'), url('../fonts/UbuntuSans-Bold.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-Bold.woff2') format('woff2'), url('../fonts/UbuntuSans-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans SemiBold'), local('UbuntuSans-SemiBold'), url('../fonts/UbuntuSans-SemiBold.woff2') format('woff2'), url('../fonts/UbuntuSans-SemiBold.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-SemiBold.woff2') format('woff2'), url('../fonts/UbuntuSans-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Ubuntu';
-  src: local('Ubuntu Sans Regular'), local('UbuntuSans-Regular'), url('../fonts/UbuntuSans-Regular.woff2') format('woff2'), url('../fonts/UbuntuSans-Regular.woff') format('woff');
+  font-family: 'Ubuntu Sans';
+  src: url('../fonts/UbuntuSans-Regular.woff2') format('woff2'), url('../fonts/UbuntuSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -371,6 +371,84 @@
 				}
 			}
 		}
+		.items-scroll-wrap {
+			order: 1;
+			&~.items-scroll-wrap {
+				order: 3;
+				&~.items-scroll-wrap {
+					order: 5;
+					&~.items-scroll-wrap {
+						order: 7;
+						&~.items-scroll-wrap {
+							order: 9;
+							&~.items-scroll-wrap {
+								order: 11;
+								&~.items-scroll-wrap {
+									order: 13;
+									&~.items-scroll-wrap {
+										order: 15;
+										&~.items-scroll-wrap {
+											order: 17;
+											&~.items-scroll-wrap {
+												order: 19;
+												&~.items-scroll-wrap {
+													order: 21;
+													&~.items-scroll-wrap {
+														order: 23;
+														&~.items-scroll-wrap {
+															order: 25;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.wrap-main {
+			order: 2;
+			&~.wrap-main {
+				order: 4;
+				&~.wrap-main {
+					order: 6;
+					&~.wrap-main {
+						order: 8;
+						&~.wrap-main {
+							order: 10;
+							&~.wrap-main {
+								order: 12;
+								&~.wrap-main {
+									order: 14;
+									&~.wrap-main {
+										order: 16;
+										&~.wrap-main {
+											order: 18;
+											&~.wrap-main {
+												order:20;
+												&~.wrap-main {
+													order: 22;
+													&~.wrap-main {
+														order: 24;
+														&~.wrap-main {
+															order: 26;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	.actions-catalog-panel {
 		.sort-wrap {
@@ -666,6 +744,13 @@
 	.tiles-box {
 		.items-scroll-wrap {
 			display: contents;
+			.item-wrap {
+				&:nth-child(2) {
+					&~.item-wrap {
+						display: none;
+					}
+				}
+			}
 		}
 		.item-wrap {
 			width: 33.33%;
