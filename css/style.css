@@ -1995,6 +1995,14 @@ html {
 .filter-box .filter-actions-wrap .btn {
   width: 100%;
   padding: 0 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.filter-box .filter-actions-wrap .btn .button-total {
+  display: inline;
+  font-size: 1em;
+  margin-left: 5px;
+  font-weight: 400;
 }
 .filter-box .filter-section-wrap {
   margin-bottom: 20px;
