@@ -168,10 +168,23 @@ h6, .h6-title {
 		margin-bottom: 0 !important;
 	}
 }
+.page-subtitle {
+	font-size: 14px;
+	font-weight: 500;
+	color: #7E88A5;
+	line-height: normal;
+}
 .h1-title, h1 {
 	font-size: 24px;
 	font-weight: bold;
 	line-height: 1;
+	&.title-large {
+		font-size: 32px;
+		margin-bottom: 2.4rem;
+	}
+	&.title-small {
+		font-size: 24px;
+	}
 }
 .text-att, .title-att {
     color: var(--clr-att);
@@ -209,5 +222,8 @@ h6, .h6-title {
     }
 	.h1-title, h1 {
 		font-size: 3.2rem;
+		&.title-large {
+			font-size: 4rem;
+		}
 	}
 }

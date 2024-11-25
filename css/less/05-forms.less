@@ -83,7 +83,7 @@
     display: block;
     width: 100%;
 }
-.frm-select {
+.frm-select, .frm-select-button {
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -118,7 +118,33 @@
 		}
 	}
 }
-
+.frm-select-button {
+	width: 100%;
+	display: block;
+	label {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		font-size: 16px;
+		color: var(--clr-base);
+		line-height: 19px;
+		border-radius: 8px;
+		border: 2px solid #fff;
+		padding: 8px;
+		transition: all ease 0.2s;
+		min-height: 35px;
+		background: #fff;
+	}
+	input {
+		&:checked {
+			&~label {
+				border-color: var(--clr-att);
+			}
+		}
+	}
+}
 
 .frm-select {
 	font-size: 14px;
