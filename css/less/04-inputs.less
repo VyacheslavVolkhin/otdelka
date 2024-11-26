@@ -182,6 +182,13 @@ select.form-input:required:invalid {
 			width: 24px;height: 24px;
 			filter: none
 		}
+		&.button-alert {
+			color: #F45759;
+			&:hover {
+				color: #F45759;
+				opacity: 0.8;
+			}
+		}
 	}
     .button-ico {
         width: 24px;
@@ -322,6 +329,14 @@ select.form-input:required:invalid {
 		&:after {
 			opacity: 0;
 			background-image: url(../img/icons/fav-active.svg);
+		}
+	}
+	&.ico-trash {
+		&:before {
+			background-image: url(../img/icons/trash.svg);
+		}
+		&:hover {
+			opacity: 0.8;
 		}
 	}
     &.ico-arrow {

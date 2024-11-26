@@ -1,6 +1,53 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
+	//phone mask
+	let phoneInputs = document.querySelectorAll('.form-input-phone');
+
+function formatPhoneNumber(input) {
+    let cleaned = input.value.replace(/\D/g, '');
+    let formatted = '';
+
+    let placeholder = input.getAttribute('placeholder');
+
+    if (placeholder === '(___) ___-__-__') {
+        if (cleaned.length >= 1) {
+            formatted += '(' + cleaned.substring(0, 3);
+        }
+        if (cleaned.length > 3) {
+            formatted += ') ' + cleaned.substring(3, 6);
+        }
+        if (cleaned.length > 6) {
+            formatted += '-' + cleaned.substring(6, 8);
+        }
+        if (cleaned.length > 8) {
+            formatted += '-' + cleaned.substring(8, 10);
+        }
+    } else if (placeholder === '+7 (___) ___-__-__') {
+        if (cleaned.length >= 1) {
+            formatted += '+7 (' + cleaned.substring(0, 3);
+        }
+        if (cleaned.length > 3) {
+            formatted += ') ' + cleaned.substring(3, 6);
+        }
+        if (cleaned.length > 6) {
+            formatted += '-' + cleaned.substring(6, 8);
+        }
+        if (cleaned.length > 8) {
+            formatted += '-' + cleaned.substring(8, 10);
+        }
+    }
+
+    input.value = formatted;
+}
+
+phoneInputs.forEach(function(input) {
+    input.addEventListener('input', function() {
+        formatPhoneNumber(input);
+    });
+});
+
+
 	// filter actions
 	const filterButtonOpen = document.querySelector('.js-filter-open');
 	const filterButtonClose = document.querySelector('.js-filter-close');
@@ -305,6 +352,31 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		});
 	});
+
+
+	//popup-form succefull show
+	let callbackForm = document.getElementById('popup-form');
+	let popupCallback = document.getElementById('popup-callback');
+	let popupSuccess = document.getElementById('popup-form-succefull');
+	if (callbackForm) {
+		callbackForm.addEventListener('submit', function(event) {
+			event.preventDefault();
+			popupCallback.classList.remove('active');
+			popupSuccess.classList.add('active');
+		});
+	}
+	let oneclickForm = document.getElementById('popup-form-catalog');
+	let popupOneclick = document.getElementById('popup-oneclick');
+	let popupSuccessCatalog = document.getElementById('popup-form-succefull-catalog');
+
+	if (oneclickForm) {
+		oneclickForm.addEventListener('submit', function(event) {
+			event.preventDefault();
+			popupOneclick.classList.remove('active');
+			popupSuccessCatalog.classList.add('active');
+		});
+	}
+	
 
 	//slider designers
 	const swiperSliderDesigners = new Swiper('.slider-designers .swiper', {
