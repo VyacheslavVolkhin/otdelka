@@ -1,6 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
+	//data-maxlength
+	let inputs = document.querySelectorAll('.form-input[data-maxlength]');
+
+	inputs.forEach(function(input) {
+		input.addEventListener('input', function() {
+			let maxLength = parseInt(input.getAttribute('data-maxlength'));
+			let count = 0;
+			for (let i = 0; i < input.value.length; i++) {
+				let char = input.value[i];
+				if (char !== '.' && char !== ',') {
+					count++;
+				}
+			}
+			if (count > maxLength) {
+				let formattedInput = input.value.replace(/[.,]/g, '');
+				input.value = formattedInput.substring(0, maxLength);
+			}
+		});
+	});
+
+
 	//phone mask
 	let phoneInputs = document.querySelectorAll('.form-input-phone');
 

@@ -2951,6 +2951,15 @@ html {
 .tab-info-box {
   margin-bottom: 16px;
 }
+.tab-info-box .features-box {
+  font-size: 16px;
+}
+.tab-info-box .features-box .elm-info-title {
+  margin-bottom: 12px;
+}
+.tab-info-box .features-box .elm-info-title:last-child {
+  margin-bottom: 0;
+}
 .tabs-box {
   margin-bottom: 16px;
 }
@@ -4884,10 +4893,10 @@ select.form-input:required:invalid {
 .button-title[data-show]:before {
   content: attr(data-show);
 }
-.active .button-title[data-title-active]:before {
+.active > .button-title[data-title-active]:before {
   content: attr(data-title-active);
 }
-.active .button-title[data-hide]:before {
+.active > .button-title[data-hide]:before {
   content: attr(data-hide);
 }
 .btn-action-ico {
@@ -5429,8 +5438,17 @@ select.form-input:required:invalid {
   height: 36px;
   border-radius: 12px;
   padding-left: 15px;
+  padding-right: 30px;
   font-size: 16px;
   background-color: #fff;
+}
+.frm-field-input input::-webkit-outer-spin-button,
+.frm-field-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.frm-field-input input[type=number] {
+  -moz-appearance: textfield;
 }
 .frm-field-row {
   display: -ms-flexbox;
@@ -5572,6 +5590,10 @@ select.form-input:required:invalid {
 }
 .frm-field-counter .button-minus:after {
   display: none;
+}
+.frm-field-counter .button-disabled:before,
+.frm-field-counter .button-disabled:after {
+  background-color: #F45759;
 }
 .frm-main-search {
   line-height: 1;

@@ -258,8 +258,17 @@
 		height: 36px;
 		border-radius: 12px;
 		padding-left: 15px;
+		padding-right: 30px;
 		font-size: 16px;
 		background-color: #fff;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type=number]{
+		-moz-appearance: textfield;
 	}
 }
 .frm-field-row {
@@ -388,6 +397,11 @@
 		left: 0;right: auto;
 		&:after {
 			display: none;
+		}
+	}
+	.button-disabled {
+		&:before, &:after {
+			background-color: #F45759;
 		}
 	}
 }

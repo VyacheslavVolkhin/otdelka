@@ -217,14 +217,14 @@ select.form-input:required:invalid {
 	}
 }
 .active {
-	.button-title {
+	&>.button-title {
 		&[data-title-active] {
 			&:before {
 				content: attr(data-title-active);
 			}
 		}
 	}
-	.button-title {
+	&>.button-title {
 		&[data-hide] {
 			&:before {
 				content: attr(data-hide);
