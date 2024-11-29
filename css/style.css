@@ -2480,6 +2480,7 @@ html {
   font-size: 1em;
   font-weight: bold;
   color: var(--clr-base);
+  margin-bottom: 0;
 }
 .order-form-box .order-total-box .frm-field-row-price.field-main .field-value {
   font-size: 1em;
@@ -5903,6 +5904,12 @@ select.form-input:required:invalid {
   color: var(--clr-att);
 }
 @media (max-width: 1023px) {
+  .frm-select-button label {
+    height: 35px;
+    border-radius: 8px;
+    border-width: 2px;
+    font-size: 16px;
+  }
   .frm-select {
     font-size: 16px;
     line-height: 20px;

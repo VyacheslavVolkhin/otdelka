@@ -277,54 +277,59 @@ phoneInputs.forEach(function(input) {
 
 
 	//js tabs
-	const tabsNav = document.querySelectorAll('.js-tabs-nav')
-	const tabsBlocks = document.querySelectorAll('.js-tab-block')
-	const tabsButtonTitle = document.querySelectorAll('.js-tab-title')
-	const tabsButtonContent = document.querySelectorAll('.js-tab-content')
+	const tabsNav = document.querySelectorAll('.js-tabs-nav');
+	const tabsBlocks = document.querySelectorAll('.js-tab-block');
+	const tabsButtonTitle = document.querySelectorAll('.js-tab-title');
+	const tabsButtonContent = document.querySelectorAll('.js-tab-content');
+	
 	function tabsActiveStart() {
-		for (iTab = 0; iTab < tabsBlocks.length; iTab++) {
-			if (tabsBlocks[iTab].classList.contains('active')) {
-				tabsBlocks[iTab].classList.remove('active')
-			}
-		}
-		for (i = 0; i < tabsNav.length; i++) {
-			let tabsNavElements = tabsNav[i].querySelectorAll('[data-tab]')
-			for (iElements = 0; iElements < tabsNavElements.length; iElements++) {
-				if (tabsNavElements[iElements].classList.contains('active')) {
-					let tabsNavElementActive = tabsNavElements[iElements].dataset.tab
-					for (j = 0; j < tabsBlocks.length; j++) {
-						if (tabsBlocks[j].dataset.tab.toString().indexOf(tabsNavElementActive) > -1) {
-							console.log(tabsBlocks[j].dataset.tab.toString().indexOf(tabsNavElementActive))
-							tabsBlocks[j].classList.add('active')
-						}
+		tabsBlocks.forEach(block => {
+			block.classList.remove('active');
+		});
+	
+		tabsNav.forEach(nav => {
+			let activeButton = nav.querySelector('[data-tab].active');
+			
+			if (activeButton) {
+				let tab = activeButton.dataset.tab;
+				let parentTab = activeButton.dataset.tabParent;
+				
+				tabsBlocks.forEach(block => {
+					if (block.dataset.tab === tab && block.dataset.tabParent === parentTab) {
+						block.classList.add('active');
 					}
-				}
+				});
 			}
-		}
-		
+		});
 	}
-	for (i = 0; i < tabsButtonTitle.length; i++) {
-		tabsButtonTitle[i].addEventListener('click', function (e) {
-			this.classList.toggle('active')
-			e.preventDefault()
-			e.stopPropagation()
-			return false
-		})
-	}
-	for (i = 0; i < tabsNav.length; i++) {
-		tabsNav[i].addEventListener('click', function (e) {
+	
+	tabsButtonTitle.forEach(button => {
+		button.addEventListener('click', function(e) {
+			this.classList.toggle('active');
+			e.preventDefault();
+			e.stopPropagation();
+			tabsActiveStart();
+		});
+	});
+	
+	tabsNav.forEach(nav => {
+		nav.addEventListener('click', function(e) {
 			if (e.target.closest('[data-tab]')) {
-				let tabsNavElements = this.querySelector('[data-tab].active')
-				tabsNavElements ? tabsNavElements.classList.remove('active') : false
-				e.target.closest('[data-tab]').classList.add('active')
-				tabsActiveStart()
-				e.preventDefault()
-				e.stopPropagation()
-				return false
+				let tabsNavElements = this.querySelector('[data-tab].active');
+				
+				if (tabsNavElements) {
+					tabsNavElements.classList.remove('active');
+				}
+				
+				e.target.closest('[data-tab]').classList.add('active');
+				tabsActiveStart();
+				e.preventDefault();
+				e.stopPropagation();
 			}
-		})
-	}
-	tabsActiveStart()
+		});
+	});
+	
+	tabsActiveStart();
 
 
 
