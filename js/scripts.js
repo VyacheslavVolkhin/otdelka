@@ -1,6 +1,86 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
+	let inputFields = document.querySelectorAll('input[data-mask]');
+
+    inputFields.forEach(function(input) {
+        let mask = input.getAttribute('data-mask');
+        
+        input.addEventListener('input', function() {
+            let maskedValue = applyMask(input.value, mask);
+            input.value = maskedValue;
+        });
+    });
+
+    function applyMask(value, mask) {
+        let maskedValue = '';
+        let valueIndex = 0;
+
+        for (let i = 0; i < mask.length; i++) {
+            if (mask[i] === '_') {
+                if (value[valueIndex] !== undefined) {
+                    maskedValue += value[valueIndex];
+                    valueIndex++;
+                } else {
+                    maskedValue += '_'; // Пустые места заполняются подчеркиванием
+                }
+            } else {
+                maskedValue += mask[i]; // Оставляем разделители
+            }
+        }
+
+        return maskedValue;
+    }
+
+	//select toggle content visibility
+	const inputsContent = document.querySelectorAll(
+		"input[data-content], input[data-content-check], input[data-content-uncheck]"
+	  );
+	
+	  inputsContent.forEach(function (input) {
+		toggleContent(input);
+		});
+	
+	  inputsContent.forEach((input) => {
+		input.addEventListener("click", function () {
+		  document.querySelectorAll(".frm-content").forEach((content) => {
+			content.classList.remove("active");
+				});
+	
+		  inputsContent.forEach(toggleContent);
+			});
+		});
+	
+	  document.querySelectorAll(".btn[data-content]").forEach((button) => {
+		button.addEventListener("click", function () {
+		  let dataContent = this.getAttribute("data-content");
+		  this.disabled = true;
+		  document
+			.querySelectorAll('.frm-content[data-content="' + dataContent + '"]')
+			.forEach((content) => {
+			  content.classList.add("active");
+				});
+		  return false;
+			});
+		});
+	
+	  function toggleContent(input) {
+		let selectContent;
+		if (input.checked) {
+		  selectContent =
+			input.getAttribute("data-content-check") ||
+			input.getAttribute("data-content");
+			} else {
+		  selectContent = input.getAttribute("data-content-uncheck");
+			}
+		document
+		  .querySelectorAll('.frm-content[data-content="' + selectContent + '"]')
+		  .forEach((content) => {
+			content.classList.add("active");
+			});
+		}
+
+
 	//data-maxlength
 	let inputs = document.querySelectorAll('.form-input[data-maxlength]');
 
@@ -391,6 +471,7 @@ phoneInputs.forEach(function(input) {
 			popupSuccess.classList.add('active');
 		});
 	}
+
 	let oneclickForm = document.getElementById('popup-form-catalog');
 	let popupOneclick = document.getElementById('popup-oneclick');
 	let popupSuccessCatalog = document.getElementById('popup-form-succefull-catalog');

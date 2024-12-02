@@ -4775,6 +4775,10 @@ select.form-input:required:invalid {
   font-size: 16px;
   font-weight: 500;
 }
+.btn .button-title-text {
+  white-space: normal;
+  line-height: 1.1;
+}
 .btn:hover {
   background-color: var(--clr-att-hover);
   border-color: var(--clr-att-hover);
@@ -5307,6 +5311,26 @@ select.form-input:required:invalid {
 .frm-field-total .field-total-value {
   font-weight: bold;
 }
+.frm-field-input-select {
+  position: relative;
+  line-height: 1;
+}
+.frm-field-input-select .frm-ico,
+.frm-field-input-select .btn-action-ico {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  margin-top: -12px;
+  z-index: 2;
+}
+.frm-field-input-select .btn-action-ico {
+  cursor: pointer;
+}
+.frm-field-input-select .frm-ico {
+  pointer-events: none;
+}
 .frm-field-select {
   display: block;
   position: relative;
@@ -5340,11 +5364,17 @@ select.form-input:required:invalid {
 .frm-popup .frm-row-submit {
   margin: 0 -8px;
 }
+.frm-popup .frm-row-submit .frm-field {
+  margin-bottom: 8px;
+}
 .frm-popup .frm-row-submit .frm-field:last-child {
   margin-bottom: 0;
 }
 .frm-popup .frm-row-submit .btn {
   width: 100%;
+}
+.frm-popup .frm-row-submit .btn.button-clear {
+  margin-top: 8px;
 }
 .frm-popup .frm-field {
   padding: 0 8px;
@@ -5353,6 +5383,14 @@ select.form-input:required:invalid {
 }
 .frm-popup .field-half {
   width: 50%;
+}
+.frm-popup .field-main {
+  -ms-flex: 1;
+      flex: 1;
+  width: auto;
+}
+.frm-popup .field-second {
+  width: 123px;
 }
 .frm-popup .field-title {
   display: block;
@@ -5377,6 +5415,28 @@ select.form-input:required:invalid {
 .frm-popup .frm-select-toggle {
   font-size: 14px;
   color: #7E88A5;
+}
+.frm-popup .scroll-inner-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -16px;
+  padding-left: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.frm-popup .scroll-inner-wrap::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.frm-popup .scroll-inner-wrap .frm-select-card {
+  margin: 0 8px 0 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.frm-popup .frm-content:not(.active) {
+  display: none;
 }
 .frm-field-phone {
   display: block;
@@ -5632,7 +5692,8 @@ select.form-input:required:invalid {
 .frm-select,
 .frm-select-button,
 .frm-select-toggle,
-.frm-select-main {
+.frm-select-main,
+.frm-select-card {
   position: relative;
   display: block;
   overflow: hidden;
@@ -5641,7 +5702,8 @@ select.form-input:required:invalid {
 .frm-select input,
 .frm-select-button input,
 .frm-select-toggle input,
-.frm-select-main input {
+.frm-select-main input,
+.frm-select-card input {
   display: block;
   position: absolute;
   top: 0;
@@ -5655,13 +5717,15 @@ select.form-input:required:invalid {
 .frm-select input:checked ~ label:after,
 .frm-select-button input:checked ~ label:after,
 .frm-select-toggle input:checked ~ label:after,
-.frm-select-main input:checked ~ label:after {
+.frm-select-main input:checked ~ label:after,
+.frm-select-card input:checked ~ label:after {
   opacity: 1;
 }
 .frm-select label,
 .frm-select-button label,
 .frm-select-toggle label,
-.frm-select-main label {
+.frm-select-main label,
+.frm-select-card label {
   display: block;
   position: relative;
   cursor: pointer;
@@ -5670,10 +5734,12 @@ select.form-input:required:invalid {
 .frm-select-button label:before,
 .frm-select-toggle label:before,
 .frm-select-main label:before,
+.frm-select-card label:before,
 .frm-select label:after,
 .frm-select-button label:after,
 .frm-select-toggle label:after,
-.frm-select-main label:after {
+.frm-select-main label:after,
+.frm-select-card label:after {
   content: "";
   display: block;
   position: absolute;
@@ -5681,8 +5747,51 @@ select.form-input:required:invalid {
 .frm-select label:after,
 .frm-select-button label:after,
 .frm-select-toggle label:after,
-.frm-select-main label:after {
+.frm-select-main label:after,
+.frm-select-card label:after {
   opacity: 0;
+}
+.frm-select-card {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  min-height: 100%;
+}
+.frm-select-card input:checked ~ label {
+  border-color: var(--clr-att);
+  background-color: #EBF6FF;
+}
+.frm-select-card label {
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 105px;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: #fff;
+  width: 100%;
+  -ms-flex: 1;
+      flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  border: 2px solid #D3DBEE;
+  border-radius: 12px;
+  transition: all ease 0.2s;
+}
+.frm-select-card .lbl-ico {
+  width: 38px;
+  height: 24px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .frm-select-main {
   display: -ms-flexbox;
@@ -5931,6 +6040,12 @@ select.form-input:required:invalid {
   }
   .frm-field-price .price-new {
     font-size: 20px;
+  }
+  .frm-popup .field-second {
+    width: 100%;
+  }
+  .frm-popup .field-main {
+    width: 100%;
   }
   .frm-popup .field-half {
     width: 100%;
